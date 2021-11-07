@@ -37,7 +37,7 @@ ul {
 /* Layout */
 nav .container {
 	/* justify-content: space-between; */
-	height: 7rem;
+	height: 7em;
 	border-bottom: 4px solid var(--light-grayish-blue);
 }
 .nav_section_left {
@@ -76,11 +76,13 @@ nav .container {
 }
 
 body {
+	position: relative;
 	margin: 0;
 	padding: 0;
 	font-family: "Kumbh Sans", sans-serif;
 	font-weight: 400;
 	font-size: 1rem;
+	min-height: 100vh;
 	/* outline: 1px solid red; */
 }
 .body_container {
@@ -131,11 +133,6 @@ body {
 }
 
 /* typography */
-/* 
-svg.icon {
-	height: 1.3rem;
-	width: 2rem;
-} */
 
 .text_bold {
 	font-weight: 700;
@@ -270,5 +267,53 @@ svg.icon {
 }
 
 .thumbnail_image:hover {
-	filter: opacity(60%);
+	opacity: 60%;
+}
+
+/* Functionality */
+.lightbox {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: var(--black-transparent);
+	overflow: hidden;
+}
+.lightbox .icon {
+	height: 3em;
+	width: 3em;
+	position: absolute;
+}
+.lightbox .icon-next,
+.lightbox .icon-previous {
+	border-radius: 50%;
+	padding: 1em;
+	top: 40%;
+	margin-left: -01.5%;
+	background-color: var(--white);
+	stroke: var(--very-dark-blue);
+}
+.lightbox .icon-close {
+	padding: 0.9em;
+	margin-top: -3em;
+	margin-left: 26vw;
+	fill: var(--white);
+}
+.container_lightbox {
+	width: 28vw;
+	margin-top: 15vh;
+}
+.lightbox_image {
+	width: 100%;
+	border-radius: var(--radius);
+}
+.lightbox .alt_images.row {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.lightbox .icon:hover {
+	stroke: var(--orange);
+	fill: var(--orange);
+	opacity: 100%;
 }
