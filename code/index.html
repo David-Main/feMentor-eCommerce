@@ -29,56 +29,77 @@
 	</head>
 
 	<body>
-		<div class="lightbox hidden">
-			<div class="container container_lightbox images_container">
-				<div class="item_image_in_view">
-					<svg class="icon icon-close">
-						<use xlink:href="#icon-close" />
-					</svg>
-					<svg class="icon icon-previous">
-						<use xlink:href="#icon-previous" />
-					</svg>
-					<img
-						class="lightbox_image"
-						src="../Assets/images/image-product-1.jpg"
-						alt=""
-						srcset=""
-					/>
-					<svg class="icon icon-next">
-						<use xlink:href="#icon-next" />
-					</svg>
-				</div>
-				<div class="alt_images row">
-					<div class="thumbnail_image thumbnail_1 current_image_thumbnail">
+		<div class="popups">
+			<div class="lightbox hidden">
+				<div class="container container_lightbox images_container">
+					<div class="item_image_in_view">
+						<svg class="icon icon-close">
+							<use xlink:href="#icon-close" />
+						</svg>
+						<svg class="icon icon-previous">
+							<use xlink:href="#icon-previous" />
+						</svg>
 						<img
-							src="../Assets/images/image-product-1-thumbnail.jpg"
-							alt="item_image"
-							class="alt_image pointable"
+							class="lightbox_image"
+							src="../Assets/images/image-product-1.jpg"
+							alt=""
+							srcset=""
 						/>
+						<svg class="icon icon-next">
+							<use xlink:href="#icon-next" />
+						</svg>
 					</div>
-					<div class="thumbnail_image thumbnail_2">
-						<img
-							src="../Assets/images/image-product-2-thumbnail.jpg"
-							alt="item_image"
-							class="alt_image pointable"
-						/>
-					</div>
-					<div class="thumbnail_image thumbnail_3">
-						<img
-							src="../Assets/images/image-product-3-thumbnail.jpg"
-							alt="item_image"
-							class="alt_image pointable"
-						/>
-					</div>
-					<div class="thumbnail_image thumbnail_4">
-						<img
-							src="../Assets/images/image-product-4-thumbnail.jpg"
-							alt="item_image"
-							class="alt_image pointable"
-						/>
+					<div class="alt_images row">
+						<div class="thumbnail_image thumbnail_1 current_image_thumbnail">
+							<img
+								src="../Assets/images/image-product-1-thumbnail.jpg"
+								alt="item_image"
+								class="alt_image pointable"
+							/>
+						</div>
+						<div class="thumbnail_image thumbnail_2">
+							<img
+								src="../Assets/images/image-product-2-thumbnail.jpg"
+								alt="item_image"
+								class="alt_image pointable"
+							/>
+						</div>
+						<div class="thumbnail_image thumbnail_3">
+							<img
+								src="../Assets/images/image-product-3-thumbnail.jpg"
+								alt="item_image"
+								class="alt_image pointable"
+							/>
+						</div>
+						<div class="thumbnail_image thumbnail_4">
+							<img
+								src="../Assets/images/image-product-4-thumbnail.jpg"
+								alt="item_image"
+								class="alt_image pointable"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div
+				style="display: none"
+				id="cart_item_template"
+				class="cart_item item_1"
+			>
+				<img src="" alt="" class="cart_item_image" />
+				<div class="cart_item_description">
+					<p class="cart_item_title"></p>
+					<p class="cart_item_pricing">
+						<span class="unit_price"></span>
+						<span class="quantity"></span>
+						<span class="total_price text_bold"></span>
+					</p>
+				</div>
+				<svg class="icon icon-delete">
+					<use xlink:href="#icon-delete" />
+				</svg>
+			</div>
+			<!-- <div class="menu_cart container"></div> -->
 		</div>
 		<div class="body_container">
 			<nav>
@@ -106,6 +127,35 @@
 							class="profile_photo pointable"
 							alt="Profile photo"
 						/>
+					</div>
+				</div>
+				<div class="menu_cart">
+					<p class="menu_cart_title text_bold">Cart</p>
+					<div class="text_bolder cart_empty">
+						<span>Your cart is empty.</span>
+					</div>
+					<div class="cart_items hidden">
+						<div id="cart_item_template" class="cart_item item_1">
+							<div class="row">
+								<img
+									src="../Assets/images/image-product-1-thumbnail.jpg"
+									alt=""
+									class="cart_item_image"
+								/>
+								<div class="cart_item_description column">
+									<p class="cart_item_title">Fall Limited Edition Sneakers</p>
+									<p class="cart_item_pricing row">
+										<span class="unit_price">$125.00</span>
+										<span class="quantity">x 3</span>
+										<span class="total_price text_bolder">$375.00</span>
+									</p>
+								</div>
+								<svg class="icon icon-delete">
+									<use xlink:href="#icon-delete" />
+								</svg>
+							</div>
+						</div>
+						<p class="cta">Checkout</p>
 					</div>
 				</div>
 			</nav>
@@ -188,7 +238,7 @@
 								<title>Icon_Cart</title>
 								<use xlink:href=" #icon-cart" />
 							</svg>
-							<span class="cta_text color_white">Add to cart</span>
+							<div class="cta_text color_white">Add to cart</div>
 						</div>
 					</div>
 				</section>

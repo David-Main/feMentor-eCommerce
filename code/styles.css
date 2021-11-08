@@ -9,9 +9,10 @@
 	--white: hsl(0, 0%, 100%);
 	--black: hsl(0, 0%, 0%);
 	--black-transparent: hsla(0, 0%, 0%, 0.75);
+	--grayish-blue-lighter: hsla(220, 14%, 75%, 0.35);
 
 	--std-width: 2rem;
-	--radius: 0.4em;
+	--radius: 0.6em;
 }
 
 *::after,
@@ -38,7 +39,7 @@ ul {
 nav .container {
 	/* justify-content: space-between; */
 	height: 7em;
-	border-bottom: 4px solid var(--light-grayish-blue);
+	border-bottom: 2px solid var(--light-grayish-blue);
 }
 .nav_section_left {
 	/* outline: 1px solid red; */
@@ -143,7 +144,9 @@ body {
 }
 .text_bolder {
 	font-weight: 800;
-	font-size: 2rem;
+}
+.logo {
+	font-size: 1.5rem;
 }
 
 .color_orange {
@@ -223,9 +226,10 @@ body {
 .cta {
 	background-color: var(--orange);
 	color: var(--white);
-	padding: 1.1em 4.5em;
-	width: 19em;
+	padding: 1.2em 4.5em;
+	width: 20em;
 	justify-content: center;
+	text-align: center;
 	border-radius: var(--radius);
 	font-size: 0.8rem;
 	font-weight: 500;
@@ -323,9 +327,6 @@ body {
 	fill: var(--orange);
 	opacity: 100%;
 }
-.lightbox.hidden {
-	display: none;
-}
 
 .current_image_thumbnail {
 	border: 2px solid var(--orange);
@@ -333,4 +334,73 @@ body {
 }
 .current_image_thumbnail .alt_image {
 	opacity: 40%;
+}
+
+.menu_cart {
+	width: 20em;
+	height: 15em;
+	right: 10%;
+	top: 11%;
+	position: absolute;
+	z-index: 50;
+	background-color: var(--white);
+	box-shadow: 0 0.7em 2em -1em var(--dark-grayish-blue);
+	border-radius: var(--radius);
+}
+.cart_empty {
+	margin: 20% auto;
+	color: var(--dark-grayish-blue);
+	font-size: 0.9rem;
+	width: fit-content;
+}
+.cart_items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 7% 5%;
+}
+.cart_items .row {
+	justify-content: space-between;
+}
+.menu_cart_title {
+	padding: 0.5em 1.5em 1.5em;
+	border-bottom: 1px solid var(--grayish-blue-lighter);
+	width: 100%;
+}
+.menu_cart .icon {
+	width: 0.8em;
+	height: 1em;
+}
+.cart_item {
+	height: 4rem;
+}
+.cart_item_image {
+	border-radius: 0.3em;
+	width: 19%;
+}
+.cart_item_description {
+	color: var(--dark-grayish-blue);
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+.cart_item_description.column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	gap: 0.7em;
+}
+.cart_item_description.column p {
+	margin: 0;
+}
+.cart_item_pricing {
+	width: 70%;
+}
+
+.menu_cart .cta {
+	box-shadow: none;
+	width: 100%;
+}
+.hidden {
+	display: none;
 }
