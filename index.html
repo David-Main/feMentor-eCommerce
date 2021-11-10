@@ -31,17 +31,17 @@
 		<div class="container_body">
 			<nav class="nav container row">
 				<div class="nav_left row">
-					<svg class="icon icon-menu mobile">
-						<use xlink:href="#icon-menu" />
+					<svg class="icon icon-menu icons-menu mobile">
+						<use class="icons-menu" xlink:href="#icon-menu" />
 					</svg>
 					<svg class="logo">
 						<use xlink:href="#logo" />
 					</svg>
 				</div>
-				<div class="nav_middle">
+				<div class="nav_middle ">
 					<div class="nav_middle_inner">
-						<svg class="icon icon-close mobile">
-							<use xlink:href="#icon-close" />
+						<svg class="icon icon-close icons-close mobile">
+							<use class="icons-close" xlink:href="#icon-close" />
 						</svg>
 						<ul class="nav_links bold">
 							<li class="nav_link">Collections</li>
@@ -54,14 +54,14 @@
 				</div>
 				<div class="nav_right row">
 					<div class="cart">
-						<div class="cart_menu ">
+						<div class="cart_menu hidden">
 							<h3 class="cart_menu_title bold">Cart</h3>
 							<div class="cart_menu_content">
 								<p class="cart_menu_notice row bold">Your cart is empty</p>
 							</div>
 						</div>
-						<svg class="icon icon-cart">
-							<use xlink:href="#icon-cart" />
+						<svg class="icon icon-cart icons-cart">
+							<use class="icons-cart" xlink:href="#icon-cart" />
 						</svg>
 					</div>
 					<img
@@ -77,35 +77,46 @@
 						<img
 							src="Assets/images/image-product-1.jpg"
 							alt="image-product-1"
-							class="non_mobile pointable"
+							class="non_mobile pointable curren_image"
 						/>
 						<div class="container container_icons row mobile">
-							<svg class="icon icon-previous mobile">
-								<use xlink:href="#icon-previous" />
+							<svg class="icon icon-previous icons-previous mobile">
+								<use class="icons-previous" xlink:href="#icon-previous" />
 							</svg>
-							<svg class="icon icon-next mobile">
-								<use xlink:href="#icon-next" />
+							<svg class="icon icon-next icons-next mobile">
+								<use class="icons-next" xlink:href="#icon-next" />
 							</svg>
 						</div>
 					</div>
 					<div class="alt_pictures row non_mobile">
-						<img
-							src="Assets/images/image-product-1-thumbnail.jpg"
-							alt="thumbnail "
-							class="thumbnail thumbnail_1 pointable"
-						/><img
-							src="Assets/images/image-product-2-thumbnail.jpg"
-							alt="thumbnail 2"
-							class="thumbnail thumbnail_2 pointable"
-						/><img
-							src="Assets/images/image-product-3-thumbnail.jpg"
-							alt="tumbnail 3"
-							class="thumbnail thumbnail_3 pointable"
-						/><img
-							src="Assets/images/image-product-4-thumbnail.jpg"
-							alt="thumbnail 4"
-							class="thumbnail thumbnail_4 pointable"
-						/>
+						<div class="thumbnail_container current_thumbnail">
+							<img
+								src="Assets/images/image-product-1-thumbnail.jpg"
+								alt="thumbnail "
+								class="thumbnail thumbnail_1 pointable"
+							/>
+						</div>
+						<div class="thumbnail_container">
+							<img
+								src="Assets/images/image-product-2-thumbnail.jpg"
+								alt="thumbnail 2"
+								class="thumbnail thumbnail_2 pointable"
+							/>
+						</div>
+						<div class="thumbnail_container">
+							<img
+								src="Assets/images/image-product-3-thumbnail.jpg"
+								alt="tumbnail 3"
+								class="thumbnail thumbnail_3 pointable"
+							/>
+						</div>
+						<div class="thumbnail_container">
+							<img
+								src="Assets/images/image-product-4-thumbnail.jpg"
+								alt="thumbnail 4"
+								class="thumbnail thumbnail_4 pointable"
+							/>
+						</div>
 					</div>
 				</div>
 				<div class="description container">
@@ -133,17 +144,17 @@
 					</div>
 					<div class="actions">
 						<div class="quantity row">
-							<svg class="icon icon-minus">
-								<use xlink:href="#icon-minus" />
+							<svg class="icon icon-minus icons-minus">
+								<use class="icons-minus" xlink:href="#icon-minus" />
 							</svg>
-							<span class="current_quantity color_dark">0</span>
-							<svg class="icon icon-plus">
-								<use xlink:href="#icon-plus" />
+							<span class="current_quantity bold color_dark">0</span>
+							<svg class="icon icon-plus icons-plus">
+								<use class="icons-plus" xlink:href="#icon-plus" />
 							</svg>
 						</div>
 						<div class="cta">
-							<svg class="icon icon-cart">
-								<use xlink:href="#icon-cart" />
+							<svg class="icon icon-cart icons-cart">
+								<use class="icons-cart" xlink:href="#icon-cart" />
 							</svg>
 							<span class="cta_text">Add to cart</span>
 						</div>
@@ -240,5 +251,5 @@
 			</svg>
 		</div>
 	</body>
-	<script src="mobileFirst.js"></script>
+	<script src="app.js"></script>
 </html>
