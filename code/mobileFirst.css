@@ -147,6 +147,10 @@ img {
 	height: 0.9rem;
 	fill: var(--dark-grayish-blue);
 }
+.nav .icon-cart.pressed {
+	fill: var(--very-dark-blue);
+}
+
 .nav_link {
 	margin-bottom: 1.4rem;
 }
@@ -156,6 +160,7 @@ img {
 }
 .nav_right .avatar {
 	width: 3rem;
+	border-radius: 50%;
 }
 
 /* Pictures */
@@ -266,6 +271,13 @@ img {
 			"container_main container_main "
 			"container_main container_main ";
 	}
+	.icon:hover,
+	.cta:hover {
+		opacity: 60%;
+	}
+	.pointable {
+		cursor: pointer;
+	}
 
 	/* Navigation Bar */
 	.nav {
@@ -274,7 +286,7 @@ img {
 		height: 5rem;
 	}
 	.nav_left {
-		flex: 1 1 20%;
+		flex: 1 1 24%;
 	}
 	.nav_middle {
 		position: initial;
@@ -296,13 +308,23 @@ img {
 		height: 100%;
 		color: var(--dark-grayish-blue);
 		font-weight: 500;
-	}
-	.nav_link:hover {
-		border-bottom: 2px solid var(--orange);
+		cursor: pointer;
 	}
 	.nav_right {
 		flex: 2 1 15%;
 		justify-content: space-between;
+	}
+	/* Hover states */
+	.nav_link:hover {
+		border-bottom: 2px solid var(--orange);
+		color: var(--very-dark-blue);
+	}
+	.nav .icon-cart:hover {
+		fill: var(--very-dark-blue);
+		opacity: 100%;
+	}
+	.nav .avatar:hover {
+		border: 2px solid var(--orange);
 	}
 
 	.container_main {
