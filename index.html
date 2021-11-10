@@ -29,6 +29,53 @@
 	</head>
 	<body>
 		<div class="container_body">
+			<div class="lightbox hidden">
+				<div class="lightbox_picture_in_view">
+					<img
+						src="Assets/images/image-product-1.jpg"
+						alt="image-product-1"
+						class="non_mobile pointable current_image"
+					/>
+					<div class="container container_icons row mobile">
+						<svg class="icon icon-previous icons-previous mobile">
+							<use class="icons-previous" xlink:href="#icon-previous" />
+						</svg>
+						<svg class="icon icon-next icons-next mobile">
+							<use class="icons-next" xlink:href="#icon-next" />
+						</svg>
+					</div>
+				</div>
+				<div class="alt_pictures row">
+					<div class="thumbnail_container current_thumbnail">
+						<img
+							src="Assets/images/image-product-1-thumbnail.jpg"
+							alt="thumbnail "
+							class="thumbnail thumbnail_1 pointable"
+						/>
+					</div>
+					<div class="thumbnail_container">
+						<img
+							src="Assets/images/image-product-2-thumbnail.jpg"
+							alt="thumbnail 2"
+							class="thumbnail thumbnail_2 pointable"
+						/>
+					</div>
+					<div class="thumbnail_container">
+						<img
+							src="Assets/images/image-product-3-thumbnail.jpg"
+							alt="tumbnail 3"
+							class="thumbnail thumbnail_3 pointable"
+						/>
+					</div>
+					<div class="thumbnail_container">
+						<img
+							src="Assets/images/image-product-4-thumbnail.jpg"
+							alt="thumbnail 4"
+							class="thumbnail thumbnail_4 pointable"
+						/>
+					</div>
+				</div>
+			</div>
 			<nav class="nav container row">
 				<div class="nav_left row">
 					<svg class="icon icon-menu icons-menu mobile">
@@ -73,12 +120,7 @@
 			</nav>
 			<div class="container_main">
 				<div class="pictures">
-					<div class="picture_in_view">
-						<img
-							src="Assets/images/image-product-1.jpg"
-							alt="image-product-1"
-							class="non_mobile pointable curren_image"
-						/>
+					<div class="picture_in_view " >
 						<div class="container container_icons row mobile">
 							<svg class="icon icon-previous icons-previous mobile">
 								<use class="icons-previous" xlink:href="#icon-previous" />
@@ -87,6 +129,11 @@
 								<use class="icons-next" xlink:href="#icon-next" />
 							</svg>
 						</div>
+						<img
+							src="Assets/images/image-product-1.jpg"
+							alt="image-product-1"
+							class=" pointable current_image"
+						/>
 					</div>
 					<div class="alt_pictures row non_mobile">
 						<div class="thumbnail_container current_thumbnail">
