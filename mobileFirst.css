@@ -177,7 +177,7 @@ img {
 }
 .picture_in_view {
 	display: flex;
-	background-image: url(../Assets/images/image-product-1.jpg);
+	background-image: url(Assets/images/image-product-1.jpg);
 	background-position: center;
 	background-size: cover;
 	min-height: 25rem;
