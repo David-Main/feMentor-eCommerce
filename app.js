@@ -33,14 +33,14 @@ function getNewPath(clickedItem) {
 function changeSource(currentItem, newPath) {
 	currentItem.setAttribute("src", newPath);
 }
-function updatethumbnails(newThumbnail) {
-	let oldthumbnails = document.querySelectorAll(".current_thumbnail");
+function updatethumbnails(newThumbnail, location = "body") {
+	let oldthumbnails = gets(location + " .current_thumbnail");
 	oldthumbnails.forEach((thumbnail) => {
 		toggleClass("current_thumbnail", thumbnail);
 	});
 
 	let newThumbnailClass = newThumbnail.classList[1];
-	let newThumbnails = document.querySelectorAll(`.${newThumbnailClass}`);
+	let newThumbnails = gets(`${location} .${newThumbnailClass}`);
 	newThumbnails.forEach((thumbnail) => {
 		toggleClass("current_thumbnail", thumbnail.parentNode);
 	});
@@ -76,9 +76,9 @@ toggleState(numItem, minusIcon, () => {
 	minusOne();
 });
 
-/*   Switch current Images   */
-let currentImages = document.querySelectorAll(".current_image");
-let altImages = document.querySelectorAll(".thumbnail");
+/*   Switch current Images via thumbnails  */
+let currentImages = gets(".current_image");
+let altImages = gets(".container_body .thumbnail");
 
 toggleState(currentImages, altImages, (clickedItem) => {
 	let newPath = getNewPath(clickedItem);
@@ -88,10 +88,10 @@ toggleState(currentImages, altImages, (clickedItem) => {
 	updatethumbnails(clickedItem);
 });
 
-let currentBackground = document.querySelector(".picture_in_view");
+let currentBackground = get(".picture_in_view");
 
 // generate srcs from thumnails
-let thumbnails = document.querySelectorAll(".thumbnail");
+let thumbnails = gets(".thumbnail");
 let imgSrcs = [];
 thumbnails.forEach((thumbnail) => {
 	imgSrcs.push(thumbnail.getAttribute("src").replace("-thumbnail", ""));
@@ -99,8 +99,8 @@ thumbnails.forEach((thumbnail) => {
 });
 
 // toggle directionIcon clicks
-let nextIcons = document.querySelectorAll(".icon-next");
-let prevIcons = document.querySelectorAll(".icon-previous");
+let nextIcons = gets(".container_body .icons-next");
+let prevIcons = gets(".container_body .icons-previous");
 toggleState(currentImages, nextIcons, () => {
 	// if nextIcons is clicked, take current image to next image in list
 	currentImages.forEach((image) => {
@@ -118,4 +118,46 @@ toggleState(currentImages, prevIcons, () => {
 		let newPath = imgSrcs[index];
 		changeSource(image, newPath);
 	});
+});
+
+/*   Set toggles for lightBox independently */
+let currentLightboxImage = get(".lightbox .current_image");
+let lightboxNexIcons = gets(".lightbox .icons-next");
+let lightboxPrevIcons = gets(".lightbox .icons-previous");
+
+toggleState(currentLightboxImage, lightboxNexIcons, () => {
+	let newPath =
+		imgSrcs[
+			(imgSrcs.indexOf(currentLightboxImage.getAttribute("src")) + 1) % 4
+		];
+	changeSource(currentLightboxImage, newPath);
+});
+
+toggleState(currentLightboxImage, lightboxPrevIcons, () => {
+	let index = imgSrcs.indexOf(currentLightboxImage.getAttribute("src")) - 1;
+	index = index == -1 ? 3 : index;
+	let newPath = imgSrcs[index];
+	changeSource(currentLightboxImage, newPath);
+});
+
+/*  change by thumbnail click */
+let lightboxaltImages = gets(".lightbox .thumbnail");
+
+toggleState(currentLightboxImage, lightboxaltImages, (clickedItem) => {
+	let newPath = getNewPath(clickedItem);
+	changeSource(currentLightboxImage, newPath);
+	updatethumbnails(clickedItem, ".lightbox ");
+});
+
+/*   Close lightbox   */
+let closeBtn = gets(".lightbox .icons-close");
+let lightbox = get(".lightbox");
+toggleState(lightbox, closeBtn, () => {
+	toggleClass("hidden", lightbox);
+});
+
+/*   open lightbox  */
+mainCurrentImage = get(".container_body .current_image");
+toggleState(lightbox, [mainCurrentImage], () => {
+	toggleClass("hidden", lightbox);
 });

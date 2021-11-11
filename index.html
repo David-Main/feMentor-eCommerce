@@ -28,15 +28,18 @@
 		</style>
 	</head>
 	<body>
-		<div class="container_body">
-			<div class="lightbox hidden">
+		<div class="lightbox hidden">
+			<div class="container_lightbox">
 				<div class="lightbox_picture_in_view">
+					<svg class="icon icon-close icons-close">
+						<use class="icons-close" xlink:href="#icon-close" />
+					</svg>
 					<img
 						src="Assets/images/image-product-1.jpg"
 						alt="image-product-1"
 						class="non_mobile pointable current_image"
 					/>
-					<div class="container container_icons row mobile">
+					<div class="container container_icons row">
 						<svg class="icon icon-previous icons-previous mobile">
 							<use class="icons-previous" xlink:href="#icon-previous" />
 						</svg>
@@ -76,6 +79,8 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container_body">		
 			<nav class="nav container row">
 				<div class="nav_left row">
 					<svg class="icon icon-menu icons-menu mobile">

@@ -110,6 +110,65 @@ img {
 	fill: var(--white);
 }
 
+/*   Lightbox   */
+.lightbox {
+	position: absolute;
+	z-index: 200;
+	width: 100%;
+	background-color: var(--black-transparent);
+}
+.container_lightbox {
+	width: 50%;
+	margin: auto;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+}
+.lightbox .alt_pictures {
+	width: 50%;
+}
+.lightbox_picture_in_view {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 55%;
+}
+.lightbox .current_image {
+	border-radius: var(--radius);
+}
+.lightbox .container_icons {
+	position: absolute;
+	justify-content: space-between;
+	width: 115%;
+}
+.lightbox .icon {
+	display: initial;
+	background-color: var(--white);
+	width: 3rem;
+	height: 3rem;
+	padding: 1rem;
+	border-radius: 50%;
+	stroke: var(--very-dark-blue);
+}
+.lightbox .icon:hover {
+	stroke: var(--orange);
+	fill: var(--orange);
+	opacity: 100%;
+}
+.lightbox .icon-close {
+	position: absolute;
+	top: -3rem;
+	right: -1rem;
+	border-radius: 0;
+	padding: 0.9rem;
+	background-color: transparent;
+	fill: var(--white);
+}
+
 /* Navigation bar */
 .nav {
 	grid-area: nav;
