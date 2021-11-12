@@ -107,14 +107,59 @@
 				<div class="nav_right row">
 					<div class="cart">
 						<div class="cart_menu hidden">
-							<h3 class="cart_menu_title bold">Cart</h3>
-							<div class="cart_menu_content">
-								<p class="cart_menu_notice row bold">Your cart is empty</p>
+							<h3 class="cart_menu_title cart_item_container bold">Cart</h3>
+							<div class="cart_menu_content cart_item_container"> 
+								<!-- <div id="cart_item_template" class="cart_item item_1"> -->
+									<div class="cart_item row">
+										<img
+											src="../Assets/images/image-product-1-thumbnail.jpg"
+											alt=""
+											class="cart_item_image"
+										/>
+										<div class="cart_item_description">
+											<p class="cart_item_title">Fall Limited Edition Sneakers</p>
+											<p class="cart_item_pricing row">
+												<span class="unit_price">$125.00</span>
+												<span>x</span>
+												<span class="cart_item_quantity"> 3</span>
+												<span class="total_price bold">$375.00</span>
+											</p>
+										</div>
+										<svg class="icon icon-delete icons-delete">
+											<use class="icons-delete" xlink:href="#icon-delete" />
+										</svg>
+									</div>
+									<div class="cart_item row">
+										<img
+											src="../Assets/images/image-product-1-thumbnail.jpg"
+											alt=""
+											class="cart_item_image"
+										/>
+										<div class="cart_item_description">
+											<p class="cart_item_title">Fall Limited Edition Sneakers</p>
+											<p class="cart_item_pricing row">
+												<span class="unit_price">$125.00</span>
+												<span>x</span>
+												<span class="cart_item_quantity"> 3</span>
+												<span class="total_price bold">$375.00</span>
+											</p>
+										</div>
+										<svg class="icon icon-delete icons-delete">
+											<use class="icons-delete" xlink:href="#icon-delete" />
+										</svg>
+									</div>
+								<!-- </div> -->
+								<p class="cart_item_cta cta">Checkout</p>
+								<p class="cart_menu_notice row bold hidden">Your cart is empty</p>
 							</div>
+
+						</div><div class="container_icon-cart">
+							<svg class="icon icon-cart icons-cart">
+								<use class="icons-cart" xlink:href="#icon-cart" />
+							</svg>
+							<span class="cart_item_count bold">0</span>
 						</div>
-						<svg class="icon icon-cart icons-cart">
-							<use class="icons-cart" xlink:href="#icon-cart" />
-						</svg>
+						
 					</div>
 					<img
 						src="Assets/images/image-avatar.png"
@@ -204,11 +249,11 @@
 								<use class="icons-plus" xlink:href="#icon-plus" />
 							</svg>
 						</div>
-						<div class="cta">
-							<svg class="icon icon-cart icons-cart">
-								<use class="icons-cart" xlink:href="#icon-cart" />
+						<div class="cta carts-btn">
+							<svg class="icon icon-cart carts-btn icons-cart">
+								<use class="icons-cart carts-btn" xlink:href="#icon-cart" />
 							</svg>
-							<span class="cta_text">Add to cart</span>
+							<span class="cta_text carts-btn">Add to cart</span>
 						</div>
 					</div>
 				</div>
