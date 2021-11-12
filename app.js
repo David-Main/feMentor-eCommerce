@@ -162,15 +162,16 @@ toggleState(lightbox, [mainCurrentImage], () => {
 	toggleClass("hidden", lightbox);
 });
 
-/*   Cart item count   */
+/*   Cart item add and count   */
 let addToCartBtn = gets(".carts-btn");
 let cartItem = get(".cart_item");
 let cartItemCount = 0;
 let itemCounter = get(".cart_item_count");
 let cartEmptyNotice = get(".cart_menu_notice");
+let cartMenuContent = get(".cart_menu_content");
+let cartItemDeleteBtn = [null];
+let itemIdNumber = 0;
 
-console.log(addToCartBtn);
-console.log(cartItem);
 // when add to cartbtn is clicked
 toggleState(cartMenu, addToCartBtn, () => {
 	// create new cartItem from template;
@@ -188,9 +189,14 @@ toggleState(cartMenu, addToCartBtn, () => {
 		itemQuantity * unitPrice
 	).toFixed(2);
 
+	// add itemNumber id to cart;
+	newCartItem.classList.add(`cartId-${++itemIdNumber}`);
+	newCartItem.querySelectorAll(".icons-delete").forEach((icon) => {
+		icon.classList.add(`cartId-${itemIdNumber}`);
+	});
 	if (itemQuantity > 0) {
 		// add to cart menu. only if quantity > 0;
-		get(".cart_menu_content").appendChild(newCartItem);
+		cartMenuContent.appendChild(newCartItem);
 		cartItemCount += 1;
 
 		// display counter
@@ -198,6 +204,25 @@ toggleState(cartMenu, addToCartBtn, () => {
 			itemCounter.innerText = cartItemCount;
 			itemCounter.classList.remove("hidden");
 			cartEmptyNotice.classList.add("hidden");
+		}
+	}
+});
+
+/*  Cart Item delete  */
+cartMenuContent.addEventListener("click", (e) => {
+	let itemclicked = e.target;
+	if (
+		itemclicked.classList.value.includes("cartId") &&
+		itemclicked.classList.value.includes("icons-delete")
+	) {
+		let idNum = itemclicked.classList.value.search(/cartId-\d/);
+		idNum = itemclicked.classList.value.substr(idNum, 9);
+		cartMenuContent.querySelector("." + idNum).remove();
+		cartItemCount -= 1;
+		itemCounter.innerText = cartItemCount;
+		if (cartItemCount == 0) {
+			cartEmptyNotice.classList.remove("hidden");
+			itemCounter.classList.add("hidden");
 		}
 	}
 });
