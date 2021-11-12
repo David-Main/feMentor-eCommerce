@@ -184,10 +184,9 @@ toggleState(cartMenu, addToCartBtn, () => {
 	let unitPrice = Number.parseFloat(
 		get(".selling_price").innerText.slice(1)
 	).toFixed(2);
-	newCartItem.querySelector(".unit_price").innerText = unitPrice;
-	newCartItem.querySelector(".total_price").innerText = (
-		itemQuantity * unitPrice
-	).toFixed(2);
+	newCartItem.querySelector(".unit_price").innerText = "$" + unitPrice;
+	newCartItem.querySelector(".total_price").innerText =
+		"$" + (itemQuantity * unitPrice).toFixed(2);
 
 	// add itemNumber id to cart;
 	newCartItem.classList.add(`cartId-${++itemIdNumber}`);
