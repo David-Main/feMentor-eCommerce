@@ -223,6 +223,7 @@ cartMenuContent.addEventListener("click", (e) => {
 		if (cartItemCount == 0) {
 			cartEmptyNotice.classList.remove("hidden");
 			itemCounter.classList.add("hidden");
+			itemIdNumber = 0;
 		}
 	}
 });
