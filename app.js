@@ -161,3 +161,43 @@ mainCurrentImage = get(".container_body .current_image");
 toggleState(lightbox, [mainCurrentImage], () => {
 	toggleClass("hidden", lightbox);
 });
+
+/*   Cart item count   */
+let addToCartBtn = gets(".carts-btn");
+let cartItem = get(".cart_item");
+let cartItemCount = 0;
+let itemCounter = get(".cart_item_count");
+let cartEmptyNotice = get(".cart_menu_notice");
+
+console.log(addToCartBtn);
+console.log(cartItem);
+// when add to cartbtn is clicked
+toggleState(cartMenu, addToCartBtn, () => {
+	// create new cartItem from template;
+	newCartItem = cartItem.cloneNode(true);
+
+	// fill in details: quantity, current price, and total price;
+	// get currentQuantity
+	let itemQuantity = get(".current_quantity").innerText;
+	newCartItem.querySelector(".cart_item_quantity").innerText = itemQuantity;
+	let unitPrice = Number.parseFloat(
+		get(".selling_price").innerText.slice(1)
+	).toFixed(2);
+	newCartItem.querySelector(".unit_price").innerText = unitPrice;
+	newCartItem.querySelector(".total_price").innerText = (
+		itemQuantity * unitPrice
+	).toFixed(2);
+
+	if (itemQuantity > 0) {
+		// add to cart menu. only if quantity > 0;
+		get(".cart_menu_content").appendChild(newCartItem);
+		cartItemCount += 1;
+
+		// display counter
+		if (cartItemCount > 0) {
+			itemCounter.innerText = cartItemCount;
+			itemCounter.classList.remove("hidden");
+			cartEmptyNotice.classList.add("hidden");
+		}
+	}
+});
